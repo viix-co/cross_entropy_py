@@ -68,7 +68,6 @@ def softmax_crossentropy_with_logits(logits, reference_answers):
     xentropy = - logits_for_answers + np.log(np.sum(np.exp(logits), axis=-1))
 
     return xentropy
-tf.nn.softmax_cross_entropy_with_logits
 
 def grad_softmax_crossentropy_with_logits(logits, reference_answers):
     """Compute crossentropy gradient from logits[batch, n_classes] and ids of correct answers"""
