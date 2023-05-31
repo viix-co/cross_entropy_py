@@ -21,10 +21,10 @@ def nl(input, target):
 def nll(input, target):
     return - np.mean(input[range(target.shape[0]), target])
 
-def log_softmax(x):
-    c = x.max()
-    logsumexp = np.log(np.sum(np.exp(x - c), axis=-1, keepdims=True))
-    return x - c - logsumexp
+def log_softmax(logits):
+    c = logits.max()
+    logsumexp = np.log(np.sum(np.exp(logits - c), axis=-1, keepdims=True))
+    return logits - c - logsumexp
 ################################################################################
 
 x = np.array([[ 0.9826,  1.0630, -0.4096],
